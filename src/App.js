@@ -2,9 +2,25 @@ import "./App.css";
 import { useState } from "react";
 function App(){
   
+ const [count,setCount]=useState(0);
+    //let count=15;
+function addvalue(){
+  if(count<=9){
+  setCount(count+1);
+  }
+  console.log(count)
+}
 
-  const[count,setCount]=useState(0)
+function minsvalue(){
   
+  if(count>0){
+    setCount(count-1);
+
+  }
+  
+  console.log(count)
+}
+
   return (
     <div className="App">
       <header>
@@ -12,9 +28,9 @@ function App(){
           Counter App using State
           </h1> 
           <h2>current value of count is {count}</h2>  
-          <button   onClick={() =>setCount(0)}>Reset</button>      
-          <button  onClick={() =>count ==10 ? "limit crossed":setCount(count +1)}  >MAX COUNTER</button>
-          <button   onClick={() =>count <=0 ? "linit crossed" :setCount(count -1)}>MIN COUNTER</button> 
+          <button >Reset</button>      
+          <button onClick={addvalue}>MAX COUNTER</button>
+          <button onClick={minsvalue}>MIN COUNTER</button> 
 
       </header>
       
